@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { YoutubeImagePipe } from './pipes/youtube-image.pipe';
+import { YoutubeDatePipe } from './pipes/youtube-date.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    YoutubeImagePipe,
+    YoutubeDatePipe
   ],
   imports: [
     BrowserModule,
