@@ -2,8 +2,7 @@
 
 <div class="card-columns">
     <!-- Se supone que solo instalando animate.css con npm y poniendo esos prefijos debería funcionar -->
-    <!-- <div *ngFor="let video of videos" class="card animate__animated animate__bounce"> -->
-    <div *ngFor="let video of videos" class="card animated fadeIn">
+    <div *ngFor="let video of videos" class="card animate__animated animate__fadeIn">
         <img [src]="video.thumbnails|youtubeImage" class="card-img-top" alt="Image no available">
         <div class="card-body">
             <h5 class="card-title">{{video.title}}</h5>
