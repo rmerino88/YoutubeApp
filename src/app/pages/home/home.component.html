@@ -1,13 +1,25 @@
 <h1 class="mt-3 font-weight-light">YouTube Videos</h1>
 
 <div class="card-columns">
-    <div *ngFor="let video of videos" class="card">
+    <!-- Se supone que solo instalando animate.css con npm y poniendo esos prefijos debería funcionar -->
+    <!-- <div *ngFor="let video of videos" class="card animate__animated animate__bounce"> -->
+    <div *ngFor="let video of videos" class="card animated fadeIn">
         <img [src]="video.thumbnails|youtubeImage" class="card-img-top" alt="Image no available">
         <div class="card-body">
             <h5 class="card-title">{{video.title}}</h5>
             <p class="card-text">{{video.description}}</p>
             <p class="card-text"><small class="text-muted">{{video.channelTitle}}</small></p>
-            <p class="card-text"><small class="text-muted">{{video.publishedAt|youtubeDate}}</small></p>
+            <p class="card-text"><small class="text-muted">{{video.publishedAt|date:'fullDate'}}</small></p>
+            <button class="btn btn-outline-primary btn-block" (click)="mostrarVideo(video)">
+                Ver video
+            </button>
         </div>
+    </div>
+</div>
+<div class="row mt-5 mb-5 text-center">
+    <div class="col">
+        <button class="btn btn-primary btn-lg" (click)="cargarVideos()">
+            Más videos
+        </button>
     </div>
 </div>

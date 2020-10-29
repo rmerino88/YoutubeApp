@@ -7,8 +7,15 @@ import { Thumbnails } from '../models/youtube.models';
 export class YoutubeImagePipe implements PipeTransform {
 
   transform(thumbnails: Thumbnails, ...args: any[]): string {
-    // TODO : Hacer esta decision en función de la resulucion de la pantalla 
-    return thumbnails.medium.url;
+    // Esa funcionalidad de window nos dice el ancho de pantalla
+    // console.log('Width: ' + window.innerWidth);
+    if(window.innerWidth>1200 && thumbnails.maxres!=null){
+      return thumbnails.maxres.url;
+    } else if(window.innerWidth>600 && thumbnails.high!=null){
+      return thumbnails.high.url;
+    } else {
+      return thumbnails.medium.url;
+    }
   }
 
 }

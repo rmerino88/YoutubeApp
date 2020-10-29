@@ -71,8 +71,9 @@ export class YoutubeService {
       .set('part', 'snippet')
       .set('key', this.apiKey)
       .set('playlistId', this.playListId)
-      .set('maxResults', '10');
-
+      .set('maxResults', '10')
+      .set('pageToken', this.nextPageToken);
+      
     // Este método sigue devolviendo un observable
     // Parece que el segundo map, actúa sobre el resultado del primero
     // En el primero la respuesta es Item[]
